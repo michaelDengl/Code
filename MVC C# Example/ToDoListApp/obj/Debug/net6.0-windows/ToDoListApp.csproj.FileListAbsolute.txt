@@ -1,0 +1,15 @@
+C:\Users\Michael\Documents\Code\MVC C# Example\ToDoListApp\obj\Debug\net6.0-windows\ToDoListApp.csproj.AssemblyReference.cache
+C:\Users\Michael\Documents\Code\MVC C# Example\ToDoListApp\obj\Debug\net6.0-windows\ToDoListApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Michael\Documents\Code\MVC C# Example\ToDoListApp\obj\Debug\net6.0-windows\ToDoListApp.AssemblyInfoInputs.cache
+C:\Users\Michael\Documents\Code\MVC C# Example\ToDoListApp\obj\Debug\net6.0-windows\ToDoListApp.AssemblyInfo.cs
+C:\Users\Michael\Documents\Code\MVC C# Example\ToDoListApp\obj\Debug\net6.0-windows\ToDoListApp.csproj.CoreCompileInputs.cache
+C:\Users\Michael\Documents\Code\MVC C# Example\ToDoListApp\bin\Debug\net6.0-windows\ToDoListApp.exe
+C:\Users\Michael\Documents\Code\MVC C# Example\ToDoListApp\bin\Debug\net6.0-windows\ToDoListApp.deps.json
+C:\Users\Michael\Documents\Code\MVC C# Example\ToDoListApp\bin\Debug\net6.0-windows\ToDoListApp.runtimeconfig.json
+C:\Users\Michael\Documents\Code\MVC C# Example\ToDoListApp\bin\Debug\net6.0-windows\ToDoListApp.dll
+C:\Users\Michael\Documents\Code\MVC C# Example\ToDoListApp\bin\Debug\net6.0-windows\ToDoListApp.pdb
+C:\Users\Michael\Documents\Code\MVC C# Example\ToDoListApp\obj\Debug\net6.0-windows\ToDoListApp.dll
+C:\Users\Michael\Documents\Code\MVC C# Example\ToDoListApp\obj\Debug\net6.0-windows\refint\ToDoListApp.dll
+C:\Users\Michael\Documents\Code\MVC C# Example\ToDoListApp\obj\Debug\net6.0-windows\ToDoListApp.pdb
+C:\Users\Michael\Documents\Code\MVC C# Example\ToDoListApp\obj\Debug\net6.0-windows\ToDoListApp.genruntimeconfig.cache
+C:\Users\Michael\Documents\Code\MVC C# Example\ToDoListApp\obj\Debug\net6.0-windows\ref\ToDoListApp.dll
