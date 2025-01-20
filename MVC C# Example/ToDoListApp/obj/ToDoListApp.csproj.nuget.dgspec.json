@@ -17,14 +17,14 @@
           "C:\\Users\\Michael\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net9.0-windows"
+          "net8.0-windows"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net9.0-windows7.0": {
-            "targetAlias": "net9.0-windows",
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
             "projectReferences": {}
           }
         },
@@ -41,9 +41,13 @@
         "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
-        "net9.0-windows7.0": {
-          "targetAlias": "net9.0-windows",
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
           "dependencies": {
+            "Microsoft.Azure.Cosmos": {
+              "target": "Package",
+              "version": "[3.35.0, )"
+            },
             "Microsoft.Azure.Functions.Worker": {
               "target": "Package",
               "version": "[2.0.0, )"
@@ -67,6 +71,10 @@
             "Microsoft.Azure.WebJobs.Extensions": {
               "target": "Package",
               "version": "[5.0.0, )"
+            },
+            "Microsoft.Azure.WebJobs.Extensions.CosmosDB": {
+              "target": "Package",
+              "version": "[3.0.10, )"
             },
             "Microsoft.Azure.WebJobs.Extensions.Http": {
               "target": "Package",
@@ -92,6 +100,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.11, 8.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[8.0.11, 8.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.11, 8.0.11]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.11, 8.0.11]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
