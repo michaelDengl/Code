@@ -1,8 +1,6 @@
 using System;
 using System.Windows.Forms;
 
-//Controller & View Logic
-
 namespace ToDoListApp
 {
     public partial class MainForm : Form

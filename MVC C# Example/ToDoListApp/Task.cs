@@ -1,13 +1,10 @@
-using System;
 using System.Collections.Generic;
-
-//Model
 
 namespace ToDoListApp
 {
     public class Task
     {
-        public string Description { get; set; }
+        public string? Description { get; set; }
         public bool IsCompleted { get; set; }
     }
 

@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace ToDoListApp
 {
-    static class Program
+    internal static class Program
     {
         [STAThread]
         static void Main()
