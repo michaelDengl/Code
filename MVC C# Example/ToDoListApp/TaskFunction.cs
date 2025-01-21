@@ -1,46 +1,68 @@
 using System.IO;
+using System.Text.Json;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.AspNetCore.Http;
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
+using System.Collections.Generic;
 
-public static class TaskFunction
+public class TaskFunction
 {
-    [FunctionName("AddTask")]
-    public static async Task<IActionResult> AddTask(
-        [HttpTrigger(AuthorizationLevel.Function, "post", Route = "tasks")] HttpRequest req,
-        ILogger log)
+    private readonly ILogger<TaskFunction> _logger;
+
+    public TaskFunction(ILogger<TaskFunction> logger)
     {
-        log.LogInformation("Adding a new task.");
-
-        string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-        TaskItem data = JsonConvert.DeserializeObject<TaskItem>(requestBody);
-
-        // Save the task to Azure Table Storage, Cosmos DB, or any other service here.
-        log.LogInformation($"Task added: {data?.Description}");
-
-        return new OkObjectResult(data);
+        _logger = logger;
     }
 
-    [FunctionName("GetTasks")]
-    public static async Task<IActionResult> GetTasks(
-        [HttpTrigger(AuthorizationLevel.Function, "get", Route = "tasks")] HttpRequest req,
-        ILogger log)
+    [Function("AddTask")]
+    public async Task<HttpResponseData> AddTask(
+        [HttpTrigger(AuthorizationLevel.Function, "post", Route = "tasks")] HttpRequestData req,
+        [CosmosDBOutput(
+            databaseName: "ToDoList",
+            containerName: "Tasks",
+            Connection = "CosmosDBConnectionString")] IAsyncCollector<TaskItem> taskItems)
     {
-        log.LogInformation("Getting all tasks.");
+        _logger.LogInformation("AddTask function is initialized and running.");
 
-        // Retrieve tasks from Azure Storage or another service.
-        var tasks = new[] { new TaskItem { Description = "Example task", IsCompleted = false } };
+        string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+        TaskItem data = JsonSerializer.Deserialize<TaskItem>(requestBody);
 
-        return new OkObjectResult(tasks);
+        if (data == null || string.IsNullOrWhiteSpace(data.Description))
+        {
+            var badRequestResponse = req.CreateResponse(System.Net.HttpStatusCode.BadRequest);
+            await badRequestResponse.WriteStringAsync("Invalid task data.");
+            return badRequestResponse;
+        }
+
+        data.Id = System.Guid.NewGuid().ToString();
+        await taskItems.AddAsync(data);
+
+        _logger.LogInformation($"Task added with ID: {data.Id}");
+        var response = req.CreateResponse(System.Net.HttpStatusCode.OK);
+        await response.WriteAsJsonAsync(data);
+        return response;
+    }
+
+    [Function("GetTasks")]
+    public async Task<HttpResponseData> GetTasks(
+        [HttpTrigger(AuthorizationLevel.Function, "get", Route = "tasks")] HttpRequestData req,
+        [CosmosDBInput(
+            databaseName: "ToDoList",
+            containerName: "Tasks",
+            Connection = "CosmosDBConnectionString",
+            SqlQuery = "SELECT * FROM c")] IEnumerable<TaskItem> taskItems)
+    {
+        _logger.LogInformation("GetTasks function is initialized and running.");
+
+        var response = req.CreateResponse(System.Net.HttpStatusCode.OK);
+        await response.WriteAsJsonAsync(taskItems);
+        return response;
     }
 }
 
 public class TaskItem
 {
+    public string Id { get; set; }
     public string Description { get; set; }
-    public bool IsCompleted { get; set; }
 }
