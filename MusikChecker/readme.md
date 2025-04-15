@@ -49,15 +49,16 @@ pip install -r requirements.txt
 
 1. **Configure Your Environment:**
 
-- `Edit config.py to update the ROOT_DIR variable with the path to your local music folder.`
+ - `Edit config.py to update the ROOT_DIR variable with the path to your local music folder.`
 
-- `Optionally adjust output file names for your reports (REPORT_FILE for the text report; the Excel file name can be defined or generated` automatically).
+ - `Optionally adjust output file names for your reports (REPORT_FILE for the text report; the Excel file name can be defined or generated` automatically).
 
 2. **Run the Program:**
 
 Execute the main script from your terminal:
 
 **python main.py**
+
 The program will:
 
 - `Scan your local music folders.`
@@ -88,9 +89,9 @@ The api_handler.py script handles the MusicBrainz API requests. It retrieves off
 
 - **Report Generation:**
 
-- **report_generator.py** creates a plain-text report.
+ - **report_generator.py** creates a plain-text report.
 
-- **report_excel.py** uses **Pandas to** create an Excel workbook with two sheets:
+ - **report_excel.py** uses **Pandas to** create an Excel workbook with two sheets:
 
   - **Album Matches:** Local album versus best online match.
 
