@@ -89,13 +89,13 @@ The api_handler.py script handles the MusicBrainz API requests. It retrieves off
 
 - **Report Generation:**
 
- - **report_generator.py** creates a plain-text report.
+  - **report_generator.py** creates a plain-text report.
 
- - **report_excel.py** uses **Pandas to** create an Excel workbook with two sheets:
+  - **report_excel.py** uses **Pandas to** create an Excel workbook with two sheets:
 
-  - **Album Matches:** Local album versus best online match.
+    - **Album Matches:** Local album versus best online match.
 
-  - **Missing Online:** Online albums not found locally.
+    - **Missing Online:** Online albums not found locally.
 
 ## Future Improvements
 - `Enhance the fuzzy matching algorithm for even better accuracy.`
