@@ -1,0 +1,4 @@
+musicbrainzngs
+python-Levenshtein
+pandas
+XlsxWriter
