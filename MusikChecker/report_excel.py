@@ -1,5 +1,3 @@
-# report_excel.py
-
 import pandas as pd
 
 def generate_excel_report(report_data, output_file):
@@ -29,8 +27,12 @@ def generate_excel_report(report_data, output_file):
                 'Local Album': local_album,
                 'Online Match': online_match if online_match is not None else "No online match"
             })
-    df_matches = pd.DataFrame(match_rows)
-    df_matches = df_matches.sort_values(by=['Band', 'Local Album'])
+    if match_rows:
+        df_matches = pd.DataFrame(match_rows)
+        df_matches = df_matches.sort_values(by=['Band', 'Local Album'])
+    else:
+        # Create an empty DataFrame with the proper columns.
+        df_matches = pd.DataFrame(columns=['Band', 'Local Album', 'Online Match'])
     
     # Build DataFrame for online albums missing locally.
     missing_rows = []
@@ -47,8 +49,11 @@ def generate_excel_report(report_data, output_file):
                 'Band': band,
                 'Missing Online Album': "None"
             })
-    df_missing = pd.DataFrame(missing_rows)
-    df_missing = df_missing.sort_values(by=['Band'])
+    if missing_rows:
+        df_missing = pd.DataFrame(missing_rows)
+        df_missing = df_missing.sort_values(by=['Band'])
+    else:
+        df_missing = pd.DataFrame(columns=['Band', 'Missing Online Album'])
     
     # Write both DataFrames to an Excel file in separate sheets.
     with pd.ExcelWriter(output_file, engine='xlsxwriter') as writer:
