@@ -22,12 +22,12 @@ This is a Python program that scans your local music collection (organized by ar
 
 music_checker/
 
-├── api_handler.py        # Functions for querying MusicBrainz and performing fuzzy matching.
-├── config.py             # Configuration file with paths and settings.
-├── folder_scanner.py     # Scans the local folder structure to extract artist and album data.
-├── main.py               # Main script that coordinates scanning, matching, and report generation.
-├── report_generator.py   # Generates a text-based report.
-├── report_excel.py       # Generates an Excel report using Pandas.
+├── api_handler.py        # Functions for querying MusicBrainz and performing fuzzy matching.<br>
+├── config.py             # Configuration file with paths and settings.<br>
+├── folder_scanner.py     # Scans the local folder structure to extract artist and album data.<br>
+├── main.py               # Main script that coordinates scanning, matching, and report generation.<br>
+├── report_generator.py   # Generates a text-based report.<br>
+├── report_excel.py       # Generates an Excel report using Pandas.<br>
 └── requirements.txt      # Lists the required Python packages.
 
 
