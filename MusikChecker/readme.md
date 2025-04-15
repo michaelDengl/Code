@@ -20,8 +20,7 @@ This is a Python program that scans your local music collection (organized by ar
 
 ## Project Structure
 
-music_checker/
-
+music_checker/<br>
 ├── api_handler.py        # Functions for querying MusicBrainz and performing fuzzy matching.<br>
 ├── config.py             # Configuration file with paths and settings.<br>
 ├── folder_scanner.py     # Scans the local folder structure to extract artist and album data.<br>
