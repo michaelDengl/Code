@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "8Ho7lfRjUOM=",
+  "dgSpecHash": "YHp1xhphyCU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Michael\\Documents\\Code\\C#\\ToDoApp\\ToDoApp.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Micha\\Code\\Code\\C#\\ToDoApp\\ToDoApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Micha\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.36\\microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\Micha\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.36\\microsoft.windowsdesktop.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\Micha\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.36\\microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\Micha\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.36\\microsoft.netcore.app.host.win-x64.6.0.36.nupkg.sha512"
+  ],
   "logs": []
 }

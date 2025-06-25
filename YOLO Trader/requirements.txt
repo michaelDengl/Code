@@ -1,0 +1,9 @@
+alpaca-trade-api
+pandas
+yfinance
+numpy
+scikit-learn
+backtrader
+dash
+plotly
+python-dotenv
